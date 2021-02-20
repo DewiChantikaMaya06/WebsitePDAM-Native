@@ -22,7 +22,7 @@
                     </div>
 
 
-                    <div class="col-lg-7 col-md-9 col-12">
+                    <div class="col-lg-9 col-md-9 col-12">
                         <div class="main-menu">
                             <nav class="navigation">
                                 <ul class="nav menu">
@@ -38,18 +38,14 @@
                                     </li>
                                     <li><a href=" <?php echo site_url('Pengaduan/index') ?>">PENGADUAN</a></li>
                                     <li><a href="<?php echo site_url('Guest/about') ?>">TENTANG KAMI</a></li>
+                                    <li><a href="#">TAMBAH DATA</a>
+                                        <ul class="dropdown">
+                                            <li><a href="<?php echo site_url('') ?>">BERITA</a></li>
+                                            <li><a href="<?php echo site_url('') ?>">KEGIATAN</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </nav>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-12">
-                        <div class="get-quote">
-                            <li><a href="#">TAMBAH DATA</a>
-                                <ul class="dropdown">
-                                    <li><a href="<?php echo site_url('') ?>">BERITA</a></li>
-                                    <li><a href="<?php echo site_url('') ?>">KEGIATAN</a></li>
-                                </ul>
-                            </li>
                         </div>
                     </div>
                 </div>
