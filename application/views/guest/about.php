@@ -86,7 +86,7 @@
                                                 <p>Saat ini telah tersedia aplikasi android untuk mengecek tagihan lewat smartphone yang anda gunakan dimanapun dan kapan pun. Aplikasi ini berbentuk file apk sehingga anda harus menginstall aplikasinya secara mandiri.
                                                     Anda dapat menggunakan nama atau nomor sambungan untuk mencari data pelanggan yang anda butuhkan.</p>
                                             </div>
-                                            <a href="{{url('https://play.google.com/store/apps/details?id=com.it.pdamsitmobile')}}"><img src="{{('guest/img/playstore.png')}}" style="width: 50%; margin-left: 10%" alt=""></a>
+                                            <a href='https://play.google.com/store/apps/details?id=com.it.pdamsitmobile'><img src="<?= base_url('assets/') ?>guest/img/playstore.png" style="width: 50%; margin-left: 10%" alt=""></a>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12">
                                             <div class="single-image">

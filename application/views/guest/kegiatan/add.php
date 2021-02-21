@@ -47,26 +47,42 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
-<section class="pf-details section">
+<section class="news-single section">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <div class="inner-content">
-                    <img src="<?= base_url('assets/') ?>guest/img/register.png" alt="#">
-                    <div class="date">
-                        <ul>
-                            <li><span>Date :</span>tanggal</li>
-                            <li><span>By :</span> Admin IT PDAM Tirta Baluran</li>
-                        </ul>
-                    </div>
-                    <div class="body-text">
-                        <h3 style="margin-left: 40%;">JUDUL</h3>
-                        <p>hbscabicabcbk</p>
+            <div class="col-lg-12 col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="single-main">
+                            <div class="panel-heading">
+                                <h4>TAMBAH KEGIATAN</h4>
+                            </div>
+                            <div class="box box-warning">
+                                <div class="panel-body">
+                                    <form role="form" method='post' action='<?php echo site_url('Kegiatan/view') ?>' enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Judul</label>
+                                            <input name="judul" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value="judul">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Gambar Kegiatan</label>
+                                            <input name="gambar_kegiatan" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Gambar Kegiatan" value="gambar">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Deskripsi</label>
+                                            <textarea name="deskripsi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" rows="10">deskripsi</textarea>
+                                        </div>
+                                        <div class="box-footer">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
 <footer id="footer" class="footer ">

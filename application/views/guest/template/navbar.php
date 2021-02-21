@@ -40,8 +40,8 @@
                                     <li><a href="<?php echo site_url('Guest/about') ?>">TENTANG KAMI</a></li>
                                     <li><a href="#">TAMBAH DATA</a>
                                         <ul class="dropdown">
-                                            <li><a href="<?php echo site_url('') ?>">BERITA</a></li>
-                                            <li><a href="<?php echo site_url('') ?>">KEGIATAN</a></li>
+                                            <li><a href="<?php echo site_url('Berita/view') ?>">BERITA</a></li>
+                                            <li><a href="<?php echo site_url('Kegiatan/view') ?>">KEGIATAN</a></li>
                                         </ul>
                                     </li>
                                 </ul>
