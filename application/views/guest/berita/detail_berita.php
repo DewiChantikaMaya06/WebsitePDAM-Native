@@ -10,24 +10,24 @@
                         <div class="single-main">
                             <!-- News Head -->
                             <div class="news-head">
-                                <img src='http://47.254.252.101:81/storage/public/berita/z8M21fv82tIBWU3fmxXafOkU0hlwtYVZkVymB0Zi.jpg' style="height: 50%;" alt="#">
+                                <img src="<?php echo base_url() . '/gambar/' . $berita['gambar']; ?>" style="height: 50%;" alt="#">
                             </div>
                             <!-- News Title -->
                             <div class="news-text">
                                 <blockquote class="overlay">
-                                    <p>JUDUL</p>
+                                    <p><?php echo $berita['judul']; ?></p>
                                 </blockquote>
                             </div>
                             <!-- Meta -->
                             <div class="meta">
                                 <div class="meta-left">
-                                    <span class="author"><a href="#"><img src="<?= base_url('assets/') ?>guest/img/www.png" alt="#">Sumber</a></span>
-                                    <span class="date"><i class="fa fa-clock-o"></i>TANGAL</span>
+                                    <span class="author"><a href="#"><img src="<?= base_url('assets/') ?>guest/img/www.png" alt="#"><?php echo $berita['sumber']; ?></a></span>
+                                    <span class="date"><i class="fa fa-clock-o"></i><?php echo $berita['created']; ?></span>
                                 </div>
                             </div>
                             <!-- News Text -->
                             <div class="news-text">
-                                <p>cbciubicusbkebyvekcyuyehwi</p>
+                                <p><?php echo $berita['isi']; ?></p>
                             </div>
                             <div class="blog-bottom">
                                 <!-- Social Share -->
@@ -50,31 +50,20 @@
                 <div class="main-sidebar">
                     <div class="single-widget recent-post">
                         <h3 class="title">Berita Terbaru Lainnya</h3>
-                        @foreach($data_berita as $dt)
+                        <!-- @foreach($data_berita as $dt) -->
+                        <?php foreach ($berita as $brt) : ?>
                         <div class="single-post">
                             <div class="image">
-                                <img src="{{asset('storage/'.$dt->gambar_berita)}}">
+                                <img src="<?php echo base_url() . '/gambar/' . $berita['gambar']; ?>">
                             </div>
                             <div class="content">
-                                <h5><a href="{{url('/detailberita/'.$dt->id)}}">{{$dt->judul}}</a></h5>
+                                <h5><a href="<?php echo base_url() ?>Berita/detail/<?php echo $berita['id'] ?>"><?php echo $berita['judul']; ?></a></h5>
                                 <ul class="comment">
-                                    <li><i class="fa fa-calendar" aria-hidden="true"></i>{{$dt->created_at}}</li>
+                                    <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo $berita['created']; ?></li>
                                 </ul>
                             </div>
                         </div>
-                        @endforeach
-                        <div class="pull-left">
-                            Showing
-                            {{ $data_berita->firstItem() }}
-                            to
-                            {{ $data_berita->lastItem() }}
-                            of
-                            {{ $data_berita->total() }}
-                            entries
-                        </div>
-                        <div class="pull-up">
-                            {{ $data_berita->links() }}
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>

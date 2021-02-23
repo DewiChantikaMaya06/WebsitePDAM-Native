@@ -52,16 +52,16 @@
         <div class="row">
             <div class="col-12">
                 <div class="inner-content">
-                    <img src="<?= base_url('assets/') ?>guest/img/register.png" alt="#">
+                    <img src="<?php echo base_url() . '/gambar/' . $kegiatan['gambar']; ?>" alt="#">
                     <div class="date">
                         <ul>
-                            <li><span>Date :</span>tanggal</li>
+                            <li><span>Date :</span><?php echo $kegiatan['created']; ?></li>
                             <li><span>By :</span> Admin IT PDAM Tirta Baluran</li>
                         </ul>
                     </div>
                     <div class="body-text">
-                        <h3 style="margin-left: 40%;">JUDUL</h3>
-                        <p>hbscabicabcbk</p>
+                        <h3 style="margin-left: 40%;"><?php echo $kegiatan['judul']; ?></h3>
+                        <p><?php echo $kegiatan['deskripsi']; ?></p>
                     </div>
                 </div>
             </div>

@@ -112,7 +112,7 @@
                     <div class="single-fun">
                         <i class="icofont icofont-home"></i>
                         <div class="content">
-                            <span class="counter">111111</span>
+                            <span class="counter">9</span>
                             <p>UNIT</p>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
                     <div class="single-fun">
                         <i class="icofont icofont-user-alt-3"></i>
                         <div class="content">
-                            <span class="counter">11111111</span>
+                            <span class="counter">219</span>
                             <p>PEGAWAI</p>
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                     <div class="single-fun">
                         <i class="icofont-simple-smile"></i>
                         <div class="content">
-                            <span class="counter">11111111111</span>
+                            <span class="counter">1695</span>
                             <p>PELANGGAN</p>
                         </div>
                     </div>
@@ -221,10 +221,12 @@
             <div class="row">
                 <div class="col-lg-12 col-12">
                     <div class="owl-carousel portfolio-slider">
-                        <div class="single-pf">
-                            <img src="<?= base_url('assets/') ?>guest/img/balik_nama.jpg" alt="" style="height: 300px;">
-                            <a href="<?php echo site_url('Kegiatan/detail') ?>" class="btn">View Details</a>
-                        </div>
+                        <?php foreach ($kegiatan as $kgt) : ?>
+                            <div class="single-pf">
+                                <img src="<?php echo base_url() . '/gambar/' . $kgt['gambar']; ?>" alt="" style="height: 300px;">
+                                <a href="<?php echo base_url() ?>Kegiatan/detail/<?php echo $kgt['id'] ?>" class="btn">View Details</a>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
@@ -315,21 +317,22 @@
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="w3-content w3-display-container">
+                                <?php foreach ($berita as $brt) : ?>
                                 <div class="mySlides">
                                     <div class="single-news">
                                         <div class="news-head">
-                                            <center><img src="<?= base_url('assets/') ?>guest/img/searching.png" style="width:80%"></center>
+                                            <center><img src="<?php echo base_url() . '/gambar/' . $brt['gambar']; ?>" style="width:80%"></center>
                                         </div>
                                         <div class="news-body">
                                             <div class="news-content">
-                                                <h1 class="text-black"><strong>JUDUL</strong></h1>
-                                                <div class="date">tanggal</div>
-                                                <p>abcdhbdkbssoubusfs<a href="<?php echo site_url('Berita/detail') ?>" class="btn-sm bg-primary text-white">Lanjutkan baca >></a></p>
+                                                <h1 class="text-black"><strong><?php echo $brt['judul']; ?></strong></h1>
+                                                <div class="date"><?php echo $brt['created']; ?></div>
+                                                <p><?php echo $brt['isi']; ?><a href="<?php echo base_url() ?>Berita/detail/<?php echo $brt['id'] ?>" class="btn-sm bg-primary text-white">Lanjutkan baca >></a></p>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
+                                <?php endforeach; ?>
                                 <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
                                 <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
                             </div>

@@ -56,59 +56,44 @@
                         <div class="single-main">
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h4>DATA KEGIATAN</h4>
+                                    <h4>DATA BERITA</h4>
                                     <div class="right">
                                         <a href='<?php echo site_url('Berita/add') ?>' class="btn btn-warning btn-edit" id="edit" style="float: right;"><i class="fa fa-plus"></i></a>
                                     </div>
                                 </div>
-                                <!-- @if(session('sukses'))
-                            <div class="alert alert-success alert-dismissible" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <i class="fa fa-check-circle"></i> Data berhasil di input...
-                            </div>
-                            @elseif(session('suksesUpdate'))
-                            <div class="alert alert-success alert-dismissible" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <i class="fa fa-check-circle"></i> Data berhasil di Update!
-                            </div>
-                            @elseif(session('suksesHapus'))
-                            <div class="alert alert-success alert-dismissible" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <i class="fa fa-trash-o"></i> Data berhasil di Hapus.
-                            </div>
-                            @endif -->
+                      
                                 <div class="panel-body">
                                     <div class='table-responsive'>
                                         <table class='table myTable'>
                                             <thead>
                                                 <tr>
                                                     <th>No.</th>
-                                                    <th>Tanggal</th>
-                                                    <th>Berita</th>
+                                                    <th>Judul</th>
+                                                    <th>Gambar</th>
                                                     <th>Sumber</th>
+                                                    <th>Isi</th>
                                                     <th>Edit</th>
                                                     <th>Hapus</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <?php
+                                                $no = 1;
+                                                foreach ($berita as $kgt) : ?>    
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>aaaaaaa</td>
+                                                    <td><?php echo $no++; ?></td>
+                                                    <td><?php echo $kgt['judul']; ?></td>
+                                                    <td><img src="<?php echo base_url() . '/gambar/' . $kgt['gambar']; ?>" width="100"></td> 
+                                                    <td><?php echo $kgt['sumber']; ?></td>
+                                                    <td><?php echo $kgt['isi']; ?></td><?php  ?>
                                                     <td>
-                                                        <h4><strong>aaaaaaaa</strong></h4> <br>
-                                                        <img src="<?= base_url('assets/') ?>guest/img/searching.png" width="50%"><br>
-                                                    </td>
-                                                    <td>sumber</td>
-                                                    <td>
-                                                        <a href='<?php echo site_url('Berita/edit') ?>' class="btn btn-warning btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
+                                                        <a href='<?php echo base_url() ?>Berita/edit/<?php echo $kgt['id'] ?>' class="btn btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
                                                     </td>
                                                     <td>
-                                                        <form method='post' action=''>
-                                                            <input type="hidden" name="_method" value="DELETE">
-                                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></button>
-                                                        </form>
+                                                        <a href='<?php echo base_url() ?>Berita/delete/<?php echo $kgt['id'] ?>' class="btn btn-delete" id="delete" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></a>
                                                     </td>
                                                 </tr>
+                                                <?php endforeach; ?>
                                             </tbody>
                                         </table>
                                     </div>

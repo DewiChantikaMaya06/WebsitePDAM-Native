@@ -59,19 +59,20 @@
                             </div>
                             <div class="box box-warning">
                                 <div class="panel-body">
-                                    <form role="form" method='post' action='<?php echo site_url('Kegiatan/view') ?>' enctype="multipart/form-data">
+                                    <form role="form" method='post' action='<?php echo base_url('Kegiatan/proses_add') ?>' enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Judul</label>
-                                            <input name="judul" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value="judul">
+                                            <input name="judul" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value="" required="">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Gambar Kegiatan</label>
-                                            <input name="gambar_kegiatan" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Gambar Kegiatan" value="gambar">
+                                            <label for="exampleInputEmail1">Gambar</label>
+                                            <input name="userfile" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="gambar" value="" size="20" required="">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Deskripsi</label>
-                                            <textarea name="deskripsi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" rows="10">deskripsi</textarea>
+                                            <textarea name="deskripsi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Deskripsi" value="" required=""></textarea>
                                         </div>
+
                                         <div class="box-footer">
                                             <button type="submit" class="btn btn-primary">Submit</button>
                                         </div>

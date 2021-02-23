@@ -61,52 +61,38 @@
                                         <a href='<?php echo site_url('Kegiatan/add') ?>' class="btn btn-warning btn-edit" id="edit" style="float: right;"><i class="fa fa-plus"></i></a>
                                     </div>
                                 </div>
-                                <!-- @if(session('sukses'))
-                            <div class="alert alert-success alert-dismissible" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <i class="fa fa-check-circle"></i> Data berhasil di input...
-                            </div>
-                            @elseif(session('suksesUpdate'))
-                            <div class="alert alert-success alert-dismissible" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <i class="fa fa-check-circle"></i> Data berhasil di Update!
-                            </div>
-                            @elseif(session('suksesHapus'))
-                            <div class="alert alert-success alert-dismissible" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <i class="fa fa-trash-o"></i> Data berhasil di Hapus.
-                            </div>
-                            @endif -->
+
                                 <div class="panel-body">
                                     <div class='table-responsive'>
+                                        <?php echo $this->session->flashdata('pesan'); ?>
                                         <table class='table myTable'>
                                             <thead>
                                                 <tr>
                                                     <th>No.</th>
-                                                    <th>Kegiatan</th>
+                                                    <th>Judul</th>
+                                                    <th>Gambar</th>
                                                     <th>Deskripsi</th>
                                                     <th>Edit</th>
                                                     <th>Hapus</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>
-                                                        <h4><strong>aaaaaaaa</strong></h4> <br>
-                                                        <img src="<?= base_url('assets/') ?>guest/img/searching.png" width="50%"><br>
-                                                    </td>
-                                                    <td>aaaaaaa</td>
-                                                    <td>
-                                                        <a href='<?php echo site_url('Kegiatan/edit') ?>' class="btn btn-warning btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <form method='post' action=''>
-                                                            <input type="hidden" name="_method" value="DELETE">
-                                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
+                                                <?php
+                                                $no = 1;
+                                                foreach ($kegiatan as $kgt) : ?>
+                                                    <tr>
+                                                        <td><?php echo $no++; ?></td>
+                                                        <td><?php echo $kgt['judul']; ?></td>
+                                                        <td><img src="<?php echo base_url() . '/gambar/' . $kgt['gambar']; ?>" width="100"></td> 
+                                                        <td><?php echo $kgt['deskripsi']; ?></td><?php  ?>
+                                                        <td>
+                                                            <a href='<?php echo base_url() ?>Kegiatan/edit/<?php echo $kgt['id'] ?>' class="btn btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
+                                                        </td>
+                                                        <td>
+                                                            <a href='<?php echo base_url() ?>Kegiatan/delete/<?php echo $kgt['id'] ?>' class="btn btn-delete" id="delete" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach; ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -119,7 +105,8 @@
         </div>
 </section>
 
-<footer id="footer" class="footer ">
+
+<footer id="footer" class="footer" style="margin-top: 10%;">
     <!-- Footer Top -->
     <div class="footer-top">
         <div class="container">

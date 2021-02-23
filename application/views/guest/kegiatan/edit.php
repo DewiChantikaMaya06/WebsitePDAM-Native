@@ -59,19 +59,23 @@
                             </div>
                             <div class="box box-warning">
                                 <div class="panel-body">
-                                    <form role="form" method='post' action='<?php echo site_url('Kegiatan/view') ?>' enctype="multipart/form-data">
+                                    <form role="form" method='post' action='<?php echo base_url('Kegiatan/proses_edit') ?>' enctype="multipart/form-data">
+
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Judul</label>
-                                            <input name="judul" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value="judul">
+                                            <input name="id" type="hidden" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value="<?php echo $kegiatan['id']; ?>">
+                                            <input name="judul" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value="<?php echo $kegiatan['judul']; ?>">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Gambar Kegiatan</label>
-                                            <input name="gambar_kegiatan" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Gambar Kegiatan" value="gambar">
+                                            <label for="exampleInputEmail1">Gambar</label>
+                                            <input name="userfile" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="gambar" value="" size="20"><br>
+                                            <img src="<?php echo base_url() . '/gambar/' . $kegiatan['gambar']; ?>" alt="" width="200">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Deskripsi</label>
-                                            <textarea name="deskripsi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" rows="10">deskripsi</textarea>
+                                            <textarea name="deskripsi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="deskripsi" value=""><?php echo $kegiatan['deskripsi']; ?></textarea>
                                         </div>
+
                                         <div class="box-footer">
                                             <button type="submit" class="btn btn-primary">Submit</button>
                                         </div>
