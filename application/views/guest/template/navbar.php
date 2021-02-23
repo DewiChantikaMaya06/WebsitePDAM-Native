@@ -38,10 +38,13 @@
                                     </li>
                                     <li><a href=" <?php echo site_url('Pengaduan/index') ?>">PENGADUAN</a></li>
                                     <li><a href="<?php echo site_url('Guest/about') ?>">TENTANG KAMI</a></li>
-                                    <li><a href="#">TAMBAH DATA</a>
+                                    <li><a href="#">DATA</a>
                                         <ul class="dropdown">
                                             <li><a href="<?php echo site_url('Berita/view') ?>">BERITA</a></li>
                                             <li><a href="<?php echo site_url('Kegiatan/view') ?>">KEGIATAN</a></li>
+                                            <li><a href="<?php echo site_url('Pendaftaran/view') ?>">PENDAFTARAN</a></li>
+                                            <li><a href="<?php echo site_url('Baliknama/view') ?>">BALIKNAMA</a></li>
+                                            <li><a href="<?php echo site_url('Pengaduan/view') ?>">PENGADUAN</a></li>
                                         </ul>
                                     </li>
                                 </ul>

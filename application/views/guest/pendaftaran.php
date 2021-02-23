@@ -63,35 +63,35 @@
         @endif -->
         <div class="row">
             <div class="col-lg-6 col-md-12 col-12">
-                <form role="form" class="form" method='post' action='' enctype="multipart/form-data">
+                <form role="form" class="form" method='post' action='<?php echo site_url('Pendaftaran/proses_add') ?>' enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group">
                                 <label class="form-group" for="">Nama Pelanggan :</label>
-                                <input name="nama" type="text" placeholder="Isi dengan nama lengkap anda" value="">
+                                <input name="nama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Isi dengan nama lengkap anda" value="" required="">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group">
                                 <label class="form-group" for="">No. KTP :</label>
-                                <input name="no_ktp" type="number" placeholder="No. KTP anda" value="">
+                                <input name="no_ktp" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="No. KTP anda" value="" required="">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group">
                                 <label class="form-group" for="">Alamat :</label>
-                                <input name="alamat" type="text" placeholder="Alamat" value="">
+                                <input name="alamat" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Alamat" value="" required="">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="row">
                                 <div class="col">
                                     <label for="form-group" for="">RT :</label>
-                                    <input name="rt" type="number" class="form-control" placeholder="RT" value="">
+                                    <input name="rt" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="RT" value="" required="">
                                 </div>
                                 <div class="col">
                                     <label for="form-group" for="">RW :</label>
-                                    <input name="rw" type="number" class="form-control" placeholder="RW" value="">
+                                    <input name="rw" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="RW" value="" required="">
                                 </div>
                             </div>
                         </div>
@@ -99,13 +99,13 @@
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group">
                                 <label class="form-group" for="">No. Handphone :</label>
-                                <input name="no_hp" type="number" placeholder="Masukkan nomer handphone" value="">
+                                <input name="no_hp" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan nomer handphone" value="" required="">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
                                 <label class="form-group" for="">Foto KTP : </label>
-                                <input name="gambar_ktp" type="file" class="form-control-file" value="">
+                                <input name="userfile" type="file" class="form-control-file" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="gambar" value="" required="">
                                 <p>
                                     <font style="color: red">Petugas PDAM akan menghubungi nomer anda dalam 1x24 jam</font>
                                 </p>

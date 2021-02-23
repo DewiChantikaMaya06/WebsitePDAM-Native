@@ -14,12 +14,12 @@ class Berita extends CI_Controller
     public function detail($id)
     {
         $data['berita'] = $this->M_berita->get_id($id);
-        $data2['berita2'] = $this->M_berita->SemuaData();
         $this->load->view('guest/template/header');
         $this->load->view('guest/template/navbar');
         $this->load->view('guest/berita/detail_berita', $data);
         $this->load->view('guest/template/script');
     }
+
     public function add()
     {
         $this->load->view('guest/template/navbar');
@@ -61,11 +61,11 @@ class Berita extends CI_Controller
         }
     }
     
-    public function edit()
+    public function edit($id)
     {
         $data['berita'] = $this->M_berita->get_id($id);
         $this->load->view('guest/template/navbar');
-        $this->load->view('guest/berita/edit');
+        $this->load->view('guest/berita/edit', $data);
         $this->load->view('guest/template/script');
     }
 

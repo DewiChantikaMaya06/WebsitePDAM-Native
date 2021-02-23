@@ -55,26 +55,28 @@
                     <div class="col-12">
                         <div class="single-main">
                             <div class="panel-heading">
-                                <h4>TAMBAH KEGIATAN</h4>
+                                <h4>EDIT BERITA</h4>
                             </div>
                             <div class="box box-warning">
                                 <div class="panel-body">
-                                    <form role="form" method='post' action='<?php echo site_url('Berita/view') ?>' enctype="multipart/form-data">
+                                    <form role="form" method='post' action='<?php echo base_url('Berita/proses_edit') ?>' enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Judul</label>
-                                            <input name="judul" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value="judul">
+                                            <input name="id" type="hidden" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value="<?php echo $berita['id']; ?>">
+                                            <input name="judul" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value="<?php echo $berita['judul']; ?>">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Gambar Kegiatan</label>
-                                            <input name="gambar_kegiatan" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Gambar Kegiatan" value="gambar">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Deskripsi</label>
-                                            <textarea name="deskripsi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" rows="10">deskripsi</textarea>
+                                            <label for="exampleInputEmail1">Gambar</label>
+                                            <input name="gambar_berita" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Gambar Berita" value="" size="20"><br>
+                                            <img src="<?php echo base_url() . '/gambar/' . $berita['gambar']; ?>" alt="" width="200">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Sumber</label>
-                                            <input name="judul" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value="judul">
+                                            <input name="sumber" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Sumber" value="<?php echo $berita['sumber']; ?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Isi</label>
+                                            <input name="isi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value="<?php echo $berita['isi']; ?>">
                                         </div>
                                         <div class="box-footer">
                                             <button type="submit" class="btn btn-primary">Submit</button>

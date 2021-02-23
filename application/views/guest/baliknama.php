@@ -64,12 +64,12 @@
         @endif -->
         <div class="row">
             <div class="col-lg-6 col-md-12 col-12">
-                <form role="form" class="form" method='post' action='' enctype="multipart/form-data">
+                <form role="form" class="form" method='post' action='<?php echo site_url('Baliknama/proses_add') ?>' enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group">
                                 <label class="form-group" for="">Nama Sebelumnya :</label>
-                                <input name="nama_sebelumnya" type="text" placeholder="Isi dengan nama lengkap anda" value="">
+                                <input name="nama_sebelumnya" type="text" placeholder="Isi dengan nama lengkap anda" value="" required="">
                                 <!-- @if($errors->has('nama_sebelumnya'))
                                 <span class="help-block text-danger">{{$errors->first('nama_sebelumnya')}}</span>
                                 @endif -->
@@ -78,37 +78,37 @@
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group ">
                                 <label class="form-group" for="">Nama Pengaju :</label>
-                                <input name="nama_pengaju" type="text" placeholder="Isi dengan nama lengkap anda" value="">
+                                <input name="nama_pengaju" type="text" placeholder="Isi dengan nama lengkap anda" value="" required="">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group">
                                 <label class="form-group" for="">No. KTP :</label>
-                                <input name="no_ktp" type="number" placeholder="Nomer KTP" value="">
+                                <input name="no_ktp" type="number" placeholder="Nomer KTP" value="" required="">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group">
                                 <label class="form-group" for="">Alamat :</label>
-                                <input name="alamat" type="text" placeholder="Alamat Lengkap" value="">
+                                <input name="alamat" type="text" placeholder="Alamat Lengkap" value="" required="">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group">
                                 <label class="form-group" for="">No. Handphone :</label>
-                                <input name="no_hp" type="number" placeholder="Nomer Handphone" value="">
+                                <input name="no_hp" type="number" placeholder="Nomer Handphone" value="" required="">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
                                 <p>Foto KTP :</p>
-                                <input name="gambar_ktp" type="file" class="form-control-file" value="">
+                                <input name="gambar_ktp" type="file" class="form-control-file" value="" required="">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group ">
                                 <p>Foto rekening Air :</p>
-                                <input name="gambar_rekening" type="file" class="form-control-file" value="">
+                                <input name="gambar_rekening" type="file" class="form-control-file" value="" required="">
                             </div>
                         </div>
                     </div>

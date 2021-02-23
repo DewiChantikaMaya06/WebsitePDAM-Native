@@ -46,83 +46,58 @@
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<section class="appointment">
+
+<section class="news-single section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title">
-                    <h2>Pengaduan</h2>
-                    <p>Anda dapat melakukan pengaduan apabila terjadi kerusakan</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-md-12 col-12">
-                <form class="form" role="form" method='post' action='<?php echo site_url('Pengaduan/proses_add') ?>' enctype="multipart/form-data">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group">
-                                <label class="form-group" for="">Nama Lengkap :</label><br>
-                                <input name="nama" type="text" placeholder="Nama lengkap anda" value="" required="">
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group ">
-                                <label class="form-group" for="">Alamat Lengkap :</label><br>
-                                <input name="alamat" type="text" placeholder="Alamat Lengkap anda" value="" required="">
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group ">
-                                <label class="form-group" for="">Nomer Handphone :</label><br>
-                                <input name="no_hp" type="number" placeholder="Nomer Handphone" value="" required="">
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group">
-                                <label class="form-group" for="">No. Pelanggan :</label><br>
-                                <input name="no_pelanggan" type="number" placeholder="Nomer Pelanggan" value="" required="">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group ">
-                                <label for="exampleFormControlSelect1">Jenis Pengaduan</label>
-                                <select name="jenis" class="form-control" id="exampleFormControlSelect1" value="" required="">
-                                    <option value="Air Keruh" {{(old('jenis') == 'Air Keruh') ? ' selected' : ''}}>Air Keruh</option>
-                                    <option value="Kebocoran" {{(old('jenis') == 'Kebocoran') ? ' selected' : ''}}>Kebocoran</option>
-                                    <option value="Meter" {{(old('jenis') == 'Meter') ? ' selected' : ''}}>Meter</option>
-                                    <option value="Pemakaian" {{(old('jenis') == 'Pemakaian') ? ' selected' : ''}}>Pemakaian</option>
-                                    <option value="Tidak Dapat Air" {{(old('jenis') == 'Tidak Dapat Air') ? ' selected' : ''}}>TDA(Tidak dapat air)</option>
-                                    <option value="Lain-ain" {{(old('jenis') == 'Lain-lain') ? ' selected' : ''}}>lain - lain</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group ">
-                                <label class="form-group" for="">Isi Pengaduan :</label>
-                                <input name="isi_pengaduan" type="text" placeholder="Ketikkan pengadua anda..." value="" required="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-5 col-md-4 col-12">
-                            <div class="form-group">
-                                <div class="button">
-                                    <button type="submit" class="btn">Kirim</button>
+            <div class="col-lg-12 col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="single-main">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h4>DATA BALIK NAMA</h4>
+                                </div>
+                      
+                                <div class="panel-body">
+                                    <div class='table-responsive'>
+                                        <table class='table myTable'>
+                                            <thead>
+                                                <tr>
+                                                    <th>No.</th>
+                                                    <th>Nama Sebelumnya</th>
+                                                    <th>Nama Pengaju</th>
+                                                    <th>No.KTP</th>
+                                                    <th>No.Handphone</th>
+                                                    <th>Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $no = 1;
+                                                foreach ($baliknama as $kgt) : ?>    
+                                                <tr>
+                                                    <td><?php echo $no++; ?></td>
+                                                    <td><?php echo $kgt['nama_sebelumnya']; ?></td>
+                                                    <td><?php echo $kgt['nama_pengaju']; ?></td>
+                                                    <td><?php echo $kgt['no_ktp']; ?></td>
+                                                    <td><?php echo $kgt['no_hp']; ?></td>
+                                                    <td>
+                                                        <a href='<?php echo base_url() ?>Pendaftaran/detail/<?php echo $kgt['id'] ?>' class="btn btn-edit" id="edit"><i class="fa fa-eye"></i></a>
+                                                        <a href='<?php echo base_url() ?>Pendaftaran/delete/<?php echo $kgt['id'] ?>' class="btn btn-delete" id="delete" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <?php endforeach; ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="col-lg-6 col-md-12 ">
-                <div class="appointment-image">
-                    <img src="<?= base_url('assets/') ?>guest/img/contact-img.png">
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
 <footer id="footer" class="footer ">
