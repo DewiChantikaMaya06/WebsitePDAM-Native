@@ -266,13 +266,94 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="column1"></td>
-                                    <td class="column6"></td>
-                                    <td class="column2"></td>
-                                    <td class="column3"></td>
-                                    <td class="column4"></td>
-                                    <td class="column5"></td>
-                                    <td class="column6"></td>
+                                    <td class="column1">Sosial Umum</td>
+                                    <td class="column6">A1</td>
+                                    <td class="column2">1.020</td>
+                                    <td class="column3">1.460</td>
+                                    <td class="column4">5.000</td>
+                                    <td class="column5">2.500</td>
+                                    <td class="column6">4.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="column1">Sosial Umum</td>
+                                    <td class="column6">A2</td>
+                                    <td class="column2">1.280</td>
+                                    <td class="column3">2.010</td>
+                                    <td class="column4">5.000</td>
+                                    <td class="column5">2.500</td>
+                                    <td class="column6">4.500</td>
+                                </tr>
+                                <tr>
+                                    <td class="column1">Sosial Umum</td>
+                                    <td class="column6">A3</td>
+                                    <td class="column2">1.500</td>
+                                    <td class="column3">1.750</td>
+                                    <td class="column4">5.000</td>
+                                    <td class="column5">2.500</td>
+                                    <td class="column6">4.500</td>
+                                </tr>
+                                <tr>
+                                    <td class="column1">Rumah Tangga</td>
+                                    <td class="column6">B1</td>
+                                    <td class="column2">1.900</td>
+                                    <td class="column3">2.830</td>
+                                    <td class="column4">5.500</td>
+                                    <td class="column5">3.500</td>
+                                    <td class="column6">5.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="column1">Rumah Tangga</td>
+                                    <td class="column6">B2</td>
+                                    <td class="column2">2.100</td>
+                                    <td class="column3">2.960</td>
+                                    <td class="column4">5.750</td>
+                                    <td class="column5">3.750</td>
+                                    <td class="column6">5.500</td>
+                                </tr>
+                                <tr>
+                                    <td class="column1">Instansi Pemerintah</td>
+                                    <td class="column6">B3</td>
+                                    <td class="column2">3.050</td>
+                                    <td class="column3">4.500</td>
+                                    <td class="column4">6.500</td>
+                                    <td class="column5">4.250</td>
+                                    <td class="column6">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="column1">Niaga Kecil</td>
+                                    <td class="column6">C1</td>
+                                    <td class="column2">3.960</td>
+                                    <td class="column3">7.690</td>
+                                    <td class="column4">7.250</td>
+                                    <td class="column5">4.500</td>
+                                    <td class="column6">6.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="column1">Niaga Kecil</td>
+                                    <td class="column6">C2</td>
+                                    <td class="column2">4.650</td>
+                                    <td class="column3">10.070</td>
+                                    <td class="column4">8.000</td>
+                                    <td class="column5">4.750</td>
+                                    <td class="column6">6.500</td>
+                                </tr>
+                                <tr>
+                                    <td class="column1">Industri Kecil</td>
+                                    <td class="column6">D1</td>
+                                    <td class="column2">8.650</td>
+                                    <td class="column3">11.650</td>
+                                    <td class="column4">9.000</td>
+                                    <td class="column5">5.000</td>
+                                    <td class="column6">7.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="column1">Industri Besar</td>
+                                    <td class="column6">D2</td>
+                                    <td class="column2">9.650</td>
+                                    <td class="column3">15.650</td>
+                                    <td class="column4">9.000</td>
+                                    <td class="column5">5.000</td>
+                                    <td class="column6">7.500</td>
                                 </tr>
                             </tbody>
                             <tfoot class="table100-foot">
