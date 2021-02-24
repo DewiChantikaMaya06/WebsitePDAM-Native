@@ -76,7 +76,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Isi</label>
-                                            <input name="isi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value="<?php echo $berita['isi']; ?>">
+                                            <textarea name="isi" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value=""><?php echo $berita['isi']; ?></textarea>
                                         </div>
                                         <div class="box-footer">
                                             <button type="submit" class="btn btn-primary">Submit</button>
