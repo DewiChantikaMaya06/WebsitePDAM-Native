@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('M_kegiatan','M_berita','M_baliknama','M_pendaftaran','M_pengaduan');
+$autoload['model'] = array('M_kegiatan', 'M_berita', 'M_baliknama', 'M_pendaftaran', 'M_pengaduan', 'M_tagihan');

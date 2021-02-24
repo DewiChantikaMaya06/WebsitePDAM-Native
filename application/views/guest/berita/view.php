@@ -61,9 +61,10 @@
                                         <a href='<?php echo site_url('Berita/add') ?>' class="btn btn-warning btn-edit" id="edit" style="float: right;"><i class="fa fa-plus"></i></a>
                                     </div>
                                 </div>
-                      
+
                                 <div class="panel-body">
                                     <div class='table-responsive'>
+                                        <?php echo $this->session->flashdata('pesan'); ?>
                                         <table class='table myTable'>
                                             <thead>
                                                 <tr>
@@ -79,20 +80,20 @@
                                             <tbody>
                                                 <?php
                                                 $no = 1;
-                                                foreach ($berita as $kgt) : ?>    
-                                                <tr>
-                                                    <td><?php echo $no++; ?></td>
-                                                    <td><?php echo $kgt['judul']; ?></td>
-                                                    <td><img src="<?php echo base_url() . '/gambar/' . $kgt['gambar']; ?>" width="100"></td> 
-                                                    <td><?php echo $kgt['sumber']; ?></td>
-                                                    <td><?php echo $kgt['isi']; ?></td><?php  ?>
-                                                    <td>
-                                                        <a href='<?php echo base_url() ?>Berita/edit/<?php echo $kgt['id'] ?>' class="btn btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <a href='<?php echo base_url() ?>Berita/delete/<?php echo $kgt['id'] ?>' class="btn btn-delete" id="delete" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></a>
-                                                    </td>
-                                                </tr>
+                                                foreach ($berita as $kgt) : ?>
+                                                    <tr>
+                                                        <td><?php echo $no++; ?></td>
+                                                        <td><?php echo $kgt['judul']; ?></td>
+                                                        <td><img src="<?php echo base_url() . '/gambar/' . $kgt['gambar']; ?>" width="100"></td>
+                                                        <td><?php echo $kgt['sumber']; ?></td>
+                                                        <td><?php echo $kgt['isi']; ?></td><?php  ?>
+                                                        <td>
+                                                            <a href='<?php echo base_url() ?>Berita/edit/<?php echo $kgt['id'] ?>' class="btn btn-edit" id="edit"><i class="fa fa-pencil-square-o"></i></a>
+                                                        </td>
+                                                        <td>
+                                                            <a href='<?php echo base_url() ?>Berita/delete/<?php echo $kgt['id'] ?>' class="btn btn-delete" id="delete" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></a>
+                                                        </td>
+                                                    </tr>
                                                 <?php endforeach; ?>
                                             </tbody>
                                         </table>

@@ -55,12 +55,7 @@
                 </div>
             </div>
         </div>
-        <!-- @if(session('sukses'))
-        <div class="alert alert-success alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <i class="fa fa-check-circle"></i> Petugas akan menghubungi dalam 1x24 jam
-        </div>
-        @endif -->
+        <?php echo $this->session->flashdata('pesan'); ?>
         <div class="row">
             <div class="col-lg-6 col-md-12 col-12">
                 <form role="form" class="form" method='post' action='<?php echo site_url('Pendaftaran/proses_add') ?>' enctype="multipart/form-data">
@@ -106,9 +101,6 @@
                             <div class="form-group">
                                 <label class="form-group" for="">Foto KTP : </label>
                                 <input name="userfile" type="file" class="form-control-file" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="gambar" value="" required="">
-                                <p>
-                                    <font style="color: red">Petugas PDAM akan menghubungi nomer anda dalam 1x24 jam</font>
-                                </p>
                             </div>
                         </div>
                     </div>

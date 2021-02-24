@@ -58,9 +58,10 @@
                                 <div class="panel-heading">
                                     <h4>DATA BALIK NAMA</h4>
                                 </div>
-                      
+
                                 <div class="panel-body">
                                     <div class='table-responsive'>
+                                        <?php echo $this->session->flashdata('pesan'); ?>
                                         <table class='table myTable'>
                                             <thead>
                                                 <tr>
@@ -75,18 +76,18 @@
                                             <tbody>
                                                 <?php
                                                 $no = 1;
-                                                foreach ($baliknama as $kgt) : ?>    
-                                                <tr>
-                                                    <td><?php echo $no++; ?></td>
-                                                    <td><?php echo $kgt['nama_sebelumnya']; ?></td>
-                                                    <td><?php echo $kgt['nama_pengaju']; ?></td>
-                                                    <td><?php echo $kgt['no_ktp']; ?></td>
-                                                    <td><?php echo $kgt['no_hp']; ?></td>
-                                                    <td>
-                                                        <a href='<?php echo base_url() ?>Pendaftaran/detail/<?php echo $kgt['id'] ?>' class="btn btn-edit" id="edit"><i class="fa fa-eye"></i></a>
-                                                        <a href='<?php echo base_url() ?>Pendaftaran/delete/<?php echo $kgt['id'] ?>' class="btn btn-delete" id="delete" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></a>
-                                                    </td>
-                                                </tr>
+                                                foreach ($baliknama as $blk) : ?>
+                                                    <tr>
+                                                        <td><?php echo $no++; ?></td>
+                                                        <td><?php echo $blk['nama_sebelumnya']; ?></td>
+                                                        <td><?php echo $blk['nama_pengaju']; ?></td>
+                                                        <td><?php echo $blk['no_ktp']; ?></td>
+                                                        <td><?php echo $blk['no_hp']; ?></td>
+                                                        <td>
+                                                            <a href='<?php echo base_url() ?>Baliknama/detail/<?php echo $blk['id'] ?>' class="btn btn-edit" id="edit"><i class="fa fa-eye"></i></a>
+                                                            <a href='<?php echo base_url() ?>Baliknama/delete/<?php echo $blk['id'] ?>' class="btn btn-delete" id="delete" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></a>
+                                                        </td>
+                                                    </tr>
                                                 <?php endforeach; ?>
                                             </tbody>
                                         </table>

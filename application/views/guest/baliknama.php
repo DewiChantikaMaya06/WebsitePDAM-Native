@@ -64,15 +64,13 @@
         @endif -->
         <div class="row">
             <div class="col-lg-6 col-md-12 col-12">
+                <?php echo $this->session->flashdata('pesan'); ?>
                 <form role="form" class="form" method='post' action='<?php echo site_url('Baliknama/proses_add') ?>' enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group">
                                 <label class="form-group" for="">Nama Sebelumnya :</label>
                                 <input name="nama_sebelumnya" type="text" placeholder="Isi dengan nama lengkap anda" value="" required="">
-                                <!-- @if($errors->has('nama_sebelumnya'))
-                                <span class="help-block text-danger">{{$errors->first('nama_sebelumnya')}}</span>
-                                @endif -->
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-6 col-12">
@@ -102,13 +100,13 @@
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
                                 <p>Foto KTP :</p>
-                                <input name="gambar_ktp" type="file" class="form-control-file" value="" required="">
+                                <input name="userfile" type="file" class="form-control-file" size="20" value="" required="">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group ">
                                 <p>Foto rekening Air :</p>
-                                <input name="gambar_rekening" type="file" class="form-control-file" value="" required="">
+                                <input name="userfile2" type="file" class="form-control-file" size="20" value="" required="">
                             </div>
                         </div>
                     </div>

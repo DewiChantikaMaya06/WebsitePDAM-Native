@@ -18,13 +18,13 @@ class Pendaftaran extends CI_Controller
         $this->load->view('guest/pendaftaran/view', $data);
         $this->load->view('guest/template/script');
     }
-    
+
     public function detail($id)
     {
         $data['pendaftaran'] = $this->M_pendaftaran->get_id($id);
         $this->load->view('guest/template/header');
         $this->load->view('guest/template/navbar');
-        $this->load->view('guest/berita/detail_pendaftaran', $data);
+        $this->load->view('guest/pendaftaran/detail_pendaftaran', $data);
         $this->load->view('guest/template/script');
     }
     public function add()
@@ -68,9 +68,9 @@ class Pendaftaran extends CI_Controller
             );
             $this->db->insert('pendaftaran', $data);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">
-            Data berhasil ditambah!
+            Petugas PDAM akan menghubungi nomer anda dalam 1x24 jam
             </div>');
-            redirect('Pendaftaran/view');
+            redirect('Pendaftaran/add');
         }
     }
 

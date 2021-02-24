@@ -57,11 +57,8 @@
                             <div class="panel">
                                 <div class="panel-heading">
                                     <h4>DATA PENGADUAN</h4>
-                                    <div class="right">
-                                        <a href='<?php echo site_url('Pendaftaran/add') ?>' class="btn btn-warning btn-edit" id="edit" style="float: right;"><i class="fa fa-plus"></i></a>
-                                    </div>
                                 </div>
-                      
+
                                 <div class="panel-body">
                                     <div class='table-responsive'>
                                         <table class='table myTable'>
@@ -77,16 +74,16 @@
                                             <tbody>
                                                 <?php
                                                 $no = 1;
-                                                foreach ($pengaduan as $kgt) : ?>    
-                                                <tr>
-                                                    <td><?php echo $no++; ?></td>
-                                                    <td><?php echo $kgt['nama']; ?></td>
-                                                    <td><?php echo $kgt['no_pelanggan']; ?></td>
-                                                    <td><?php echo $kgt['jenis']; ?></td><?php  ?>
-                                                    <td>
-                                                        <a href='<?php echo base_url() ?>Pendaftaran/detail/<?php echo $kgt['id'] ?>' class="btn btn-edit" id="edit"><i class="fa fa-eye"></i></a>
-                                                    </td>
-                                                </tr>
+                                                foreach ($pengaduan as $pgd) : ?>
+                                                    <tr>
+                                                        <td><?php echo $no++; ?></td>
+                                                        <td><?php echo $pgd['nama']; ?></td>
+                                                        <td><?php echo $pgd['no_pelanggan']; ?></td>
+                                                        <td><?php echo $pgd['jenis']; ?></td><?php  ?>
+                                                        <td>
+                                                            <a href='<?php echo base_url() ?>Pengaduan/detail/<?php echo $pgd['id'] ?>' class="btn btn-edit" id="edit"><i class="fa fa-eye"></i></a>
+                                                        </td>
+                                                    </tr>
                                                 <?php endforeach; ?>
                                             </tbody>
                                         </table>

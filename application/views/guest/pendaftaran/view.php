@@ -58,7 +58,7 @@
                                 <div class="panel-heading">
                                     <h4>DATA PENDAFTARAN</h4>
                                 </div>
-                      
+
                                 <div class="panel-body">
                                     <div class='table-responsive'>
                                         <table class='table myTable'>
@@ -66,7 +66,6 @@
                                                 <tr>
                                                     <th>No.</th>
                                                     <th>Nama</th>
-                                                    <th>Alamat</th>
                                                     <th>No.Handphone</th>
                                                     <th>Gambar KTP</th>
                                                     <th>Aksi</th>
@@ -75,18 +74,17 @@
                                             <tbody>
                                                 <?php
                                                 $no = 1;
-                                                foreach ($pendaftaran as $kgt) : ?>    
-                                                <tr>
-                                                    <td><?php echo $no++; ?></td>
-                                                    <td><?php echo $kgt['nama']; ?></td>
-                                                    <td><?php echo $kgt['no_hp']; ?></td>
-                                                    <td><?php echo $kgt['alamat']; ?></td>
-                                                    <td><img src="<?php echo base_url() . '/gambar/' . $kgt['gambar']; ?>" width="100"></td> 
-                                                    <td>
-                                                        <a href='<?php echo base_url() ?>Pendaftaran/detail/<?php echo $kgt['id'] ?>' class="btn btn-edit" id="edit"><i class="fa fa-eye"></i></a>
-                                                        <a href='<?php echo base_url() ?>Pendaftaran/delete/<?php echo $kgt['id'] ?>' class="btn btn-delete" id="delete" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></a>
-                                                    </td>
-                                                </tr>
+                                                foreach ($pendaftaran as $pdf) : ?>
+                                                    <tr>
+                                                        <td><?php echo $no++; ?></td>
+                                                        <td><?php echo $pdf['nama']; ?></td>
+                                                        <td><?php echo $pdf['no_hp']; ?></td>
+                                                        <td><img src="<?php echo base_url() . '/gambar/' . $pdf['gambar']; ?>" width="100"></td>
+                                                        <td>
+                                                            <a href='<?php echo base_url() ?>Pendaftaran/detail/<?php echo $pdf['id'] ?>' class="btn btn-edit" id="edit"><i class="fa fa-eye"></i></a>
+                                                            <a href='<?php echo base_url() ?>Pendaftaran/delete/<?php echo $pdf['id'] ?>' class="btn btn-delete" id="delete" onclick="return confirm('Yakin mau dihapus ?') "><i class="fa fa-trash-o"></i></a>
+                                                        </td>
+                                                    </tr>
                                                 <?php endforeach; ?>
                                             </tbody>
                                         </table>

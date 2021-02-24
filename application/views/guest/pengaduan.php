@@ -58,7 +58,8 @@
         </div>
         <div class="row">
             <div class="col-lg-6 col-md-12 col-12">
-                <form class="form" role="form" method='post' action='<?php echo site_url('Pengaduan/proses_add') ?>' enctype="multipart/form-data">
+                <?php echo $this->session->flashdata('pesan'); ?>
+                <form class="form" role="form" method="post" action='<?php echo base_url('Pengaduan/proses_add') ?>' enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-lg-12 col-md-6 col-12">
                             <div class="form-group">
@@ -88,12 +89,12 @@
                             <div class="form-group ">
                                 <label for="exampleFormControlSelect1">Jenis Pengaduan</label>
                                 <select name="jenis" class="form-control" id="exampleFormControlSelect1" value="" required="">
-                                    <option value="Air Keruh" {{(old('jenis') == 'Air Keruh') ? ' selected' : ''}}>Air Keruh</option>
-                                    <option value="Kebocoran" {{(old('jenis') == 'Kebocoran') ? ' selected' : ''}}>Kebocoran</option>
-                                    <option value="Meter" {{(old('jenis') == 'Meter') ? ' selected' : ''}}>Meter</option>
-                                    <option value="Pemakaian" {{(old('jenis') == 'Pemakaian') ? ' selected' : ''}}>Pemakaian</option>
-                                    <option value="Tidak Dapat Air" {{(old('jenis') == 'Tidak Dapat Air') ? ' selected' : ''}}>TDA(Tidak dapat air)</option>
-                                    <option value="Lain-ain" {{(old('jenis') == 'Lain-lain') ? ' selected' : ''}}>lain - lain</option>
+                                    <option value="air_keruh">Air Keruh</option>
+                                    <option value="kebocoran">Kebocoran</option>
+                                    <option value="meter">Meter</option>
+                                    <option value="pemakaian">Pemakaian</option>
+                                    <option value="tda">Tidak Dapat Air</option>
+                                    <option value="lain">lain - lain</option>
                                 </select>
                             </div>
                         </div>

@@ -62,12 +62,12 @@
                                     <form role="form" method='post' action='<?php echo base_url('Berita/proses_edit') ?>' enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Judul</label>
-                                            <input name="id" type="hidden" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value="<?php echo $berita['id']; ?>">
+                                            <input name="id" type="hidden" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="<?php echo $berita['id']; ?>">
                                             <input name="judul" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Judul" value="<?php echo $berita['judul']; ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Gambar</label>
-                                            <input name="gambar_berita" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Gambar Berita" value="" size="20"><br>
+                                            <input name="userfile" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Gambar Berita" value="" size="20"><br>
                                             <img src="<?php echo base_url() . '/gambar/' . $berita['gambar']; ?>" alt="" width="200">
                                         </div>
                                         <div class="form-group">

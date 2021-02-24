@@ -46,6 +46,7 @@
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
+
 <section class="appointment">
     <div class="container">
         <div class="row">
@@ -63,7 +64,7 @@
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
                                 <label class="form-group" for="">Identitas Rekening :</label>
-                                <input name="no_pelanggan" type="number" placeholder="No. Pelanggan" @if ($pelanggan !=null) value="{{$pelanggan->no_pelanggan}}" @else value="" @endif>
+                                <input name="keyword" type="text" placeholder="Nama/No.sambungan/No.pelanggan" value="">
                             </div>
                         </div>
                     </div>
@@ -77,89 +78,61 @@
                         </div>
                     </div>
                 </form>
-
-                <form class="form" action="">
-                    <div class="alert alert-success alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <i class="fa fa-check-circle"></i> Data berhasil ditemukan !
+                <?php if (empty($tagihan)) : ?>
+                    <div class="alert alert-danger" role="alert">
+                        Tidak ada data ditemukan...
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group">
-                                <label class="form-group" for="">Nama Lengkap :</label>
-                                <input name="name" type="text" value="{{$pelanggan->nama}}" placeholder="" disabled>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group">
-                                <label class="form-group" for="">Alamat :</label>
-                                <input name="name" type="text" value="{{$pelanggan->alamat}}" disabled>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group">
-                                <label class="form-group" for="">No. Sambungan :</label>
-                                <input name="name" type="text" value="{{$pelanggan->no_sambungan}}" disabled>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group">
-                                <label class="form-group" for="">No. Pelanggan :</label>
-                                <input name="name" type="text" value="{{$pelanggan->no_pelanggan}}" disabled>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group">
-                                <label class="form-group" for="">Jumlah Rekening :</label>
-                                <input name="name" type="text" value="{{$pelanggan->jumlah_rekening}}" disabled>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group">
-                                <label class="form-group" for="">Tagihan Air :</label>
-                                <input name="name" type="text" value="{{$pelanggan->tagihan_air}}" disabled>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group">
-                                <label class="form-group" for="">Denda :</label>
-                                <input name="name" type="text" value="{{$pelanggan->denda}}" disabled>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group">
-                                <label class="form-group" for="">Segel :</label>
-                                <input name="name" type="text" value="{{$pelanggan->segel}}" disabled>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12 col-md-6 col-12">
-                            <div class="form-group">
-                                <label class="form-group" for="">Total Tagihan :</label>
-                                <input name="name" type="text" value="{{$pelanggan->total_tagihan}}" disabled>
-                            </div>
-                        </div>
-                    </div>
+                <?php endif; ?>
             </div>
-            </form>
-            <div class="col-lg-6 col-md-12 ">
-                <div class="appointment-image">
-                    <img src="<?= base_url('assets/') ?>guest/img/searching.png" alt="">
+        </div>
+</section>
+
+<section class="news-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="single-main">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h4>Hasil pencarian</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <div class='table-responsive'>
+                                        <table class='table myTable'>
+                                            <thead>
+                                                <tr>
+                                                    <th>No.</th>
+                                                    <th>Nama</th>
+                                                    <th>No.Sambungan</th>
+                                                    <th>Alamat</th>
+                                                    <th>Detail</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php if ($tagihan != false) : ?>
+                                                    <?php
+                                                        $no = 1;
+                                                        foreach ($tagihan as $tgh) : ?>
+                                                        <tr>
+                                                            <td><?php echo $no++; ?></td>
+                                                            <td><?php echo $tgh['nama']; ?></td>
+                                                            <td><?php echo $tgh['no_sambungan']; ?></td>
+                                                            <td><?php echo $tgh['alamat']; ?></td>
+                                                            <td>
+                                                                <a href='<?php echo base_url() ?>Tagihan/detail/<?php echo $tgh['id'] ?>' class="btn btn-edit" id="detail"><i class="fa fa-eye"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -167,7 +140,7 @@
 </section>
 
 <!-- Footer Area -->
-<footer id="footer" class="footer ">
+<footer id="footer" class="footer" style="margin-top: 10%;">
     <!-- Footer Top -->
     <div class="footer-top">
         <div class="container">
