@@ -72,7 +72,7 @@
 </section>
 
 
-<footer id="footer" class="footer ">
+<footer id="footer" class="footer" style="margin-top:15%">
     <!-- Footer Top -->
     <div class="footer-top">
         <div class="container">

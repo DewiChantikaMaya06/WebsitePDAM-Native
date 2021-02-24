@@ -87,7 +87,12 @@
                 </div>
             </div>
         </div>
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('isi');
+    </script>
 </section>
+
 
 <footer id="footer" class="footer ">
     <!-- Footer Top -->
