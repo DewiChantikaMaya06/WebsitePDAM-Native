@@ -327,7 +327,8 @@
                                             <div class="news-content">
                                                 <h1 class="text-black"><strong><?php echo $brt['judul']; ?></strong></h1>
                                                 <div class="date"><?php echo $brt['created']; ?></div>
-                                                <p><?php echo $brt['isi']; ?><a href="<?php echo base_url() ?>Berita/detail/<?php echo $brt['id'] ?>" class="btn-sm bg-primary text-white">Lanjutkan baca >></a></p>
+                                                <p><?php echo character_limiter( $brt['isi'],200); ?><a href="<?php echo base_url() ?>Berita/detail/<?php echo $brt['id'] ?>" class="btn-sm bg-primary text-white">Lanjutkan baca >></a></p>
+
                                             </div>
                                         </div>
                                     </div>

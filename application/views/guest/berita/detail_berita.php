@@ -51,15 +51,15 @@
                     <div class="single-widget recent-post">
                         <h3 class="title">Berita Terbaru Lainnya</h3>
                         <!-- @foreach($data_berita as $dt) -->
-                        <?php foreach ($berita as $brt) : ?>
+                        <?php foreach ($lain as $l) : ?>
                         <div class="single-post">
                             <div class="image">
-                                <img src="<?php echo base_url() . '/gambar/' . $berita['gambar']; ?>">
+                                <img src="<?php echo base_url() . '/gambar/' . $l['gambar']; ?>">
                             </div>
                             <div class="content">
-                                <h5><a href="<?php echo base_url() ?>Berita/detail/<?php echo $berita['id'] ?>"><?php echo $berita['judul']; ?></a></h5>
+                                <h5><a href="<?php echo base_url() ?>Berita/detail/<?php echo $l['id'] ?>"><?php echo $l['judul']; ?></a></h5>
                                 <ul class="comment">
-                                    <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo $berita['created']; ?></li>
+                                    <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo $l['created']; ?></li>
                                 </ul>
                             </div>
                         </div>
