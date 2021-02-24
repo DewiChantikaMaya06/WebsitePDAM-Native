@@ -107,7 +107,7 @@
         </div>
 </section>
 
-<footer id="footer" class="footer ">
+<footer id="footer" class="footer" style="margin-top: 10%;">
     <!-- Footer Top -->
     <div class="footer-top">
         <div class="container">
